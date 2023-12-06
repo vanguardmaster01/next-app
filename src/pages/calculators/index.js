@@ -5,6 +5,7 @@ import { Grid, Box, Container, Stack, Typography,
 import { Layout as DashboardLayout } from 'src/layouts/dashboard/layout';
 
 import { solar_image_path, wind_image_path } from 'src/utils/utils';
+import Link from 'next/link';
 
 const Page = () => {
   return (
@@ -40,30 +41,34 @@ const Page = () => {
             <Grid container spacing={3}>
               <Grid xs={12} sm={6} lg={4} sx={{mr: 4}}>
                 <Card >
-                  <CardHeader title="Solar Panel" />
-                  <Box
-                      component="img"
-                      src={solar_image_path}
-                      sx={{
-                        borderRadius: 1,
-                        height: 300,
-                        width: 300
-                      }}
-                    />
+                  <Link href="/calculators/solar">
+                    <CardHeader title="Solar Panel" />
+                    <Box
+                        component="img"
+                        src={solar_image_path}
+                        sx={{
+                          borderRadius: 1,
+                          height: 300,
+                          width: 300
+                        }}
+                      />
+                    </Link>
                 </Card>                
               </Grid>
               <Grid xs={12} sm={6} lg={4}>
                 <Card >
-                  <CardHeader title="Wind Turbine" />
-                  <Box
-                      component="img"
-                      src={wind_image_path}
-                      sx={{
-                        borderRadius: 1,
-                        height: 300,
-                        width: 300
-                      }}
-                    />
+                  <Link href="/calculators/wind">
+                    <CardHeader title="Wind Turbine" />
+                    <Box
+                        component="img"
+                        src={wind_image_path}
+                        sx={{
+                          borderRadius: 1,
+                          height: 300,
+                          width: 300
+                        }}
+                      />
+                    </Link>
                 </Card>                
               </Grid>
             </Grid>
