@@ -19,26 +19,16 @@ const Page = () => {
         component="main"
         sx={{
           flexGrow: 1,
-          py: 8
+          py: 2
         }}
       >
-        <Container maxWidth="xl">
-          <Stack spacing={3}>
-            <Stack
-              direction="row"
-              justifyContent="space-between"
-              spacing={4}
-            >
-              <Stack spacing={1}>
-                <Typography variant="h4">
-                  Calculator
-                </Typography>
-              </Stack>
+          <Container maxWidth="xl" sx={{mt: 1}}>
+            <Stack spacing={1}>
+              <Typography variant="h4">
+                Calculator
+              </Typography>
             </Stack>
-          </Stack>
-
-          <Container maxWidth="xl" sx={{mt: 8}}>
-            <Grid container spacing={3}>
+            <Grid container spacing={3} sx={{my: 4, ml: .1}}>
               <Grid xs={12} sm={6} lg={4} sx={{mr: 4}}>
                 <Card >
                   <Link href="/calculators/solar">
@@ -73,7 +63,7 @@ const Page = () => {
               </Grid>
             </Grid>
           </Container>
-        </Container>
+        {/* </Container> */}
       </Box>
     </>
   );
