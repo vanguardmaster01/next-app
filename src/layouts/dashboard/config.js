@@ -47,7 +47,7 @@ export const items = [
   },
   {
     title: 'Operations',
-    path: '/settings',
+    path: '/operations',
     icon: (
       <SvgIcon fontSize="small">
         <CogIcon />
