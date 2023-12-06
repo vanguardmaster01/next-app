@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Head from 'next/head';
 import { Container, Grid, Box, Button, Link, Checkbox, InputLabel,LinearProgress,
-    Stack, TextField, Typography,  FormControlLabel, MenuItem, FormControl, Select, SelectChangeEvent
+    Stack, TextField, Typography,  FormControlLabel, MenuItem, FormControl, Select, SelectChangeEvent, Card, Divider
 } from '@mui/material';
 import { Layout as DashboardLayout } from 'src/layouts/dashboard/layout';
 
@@ -11,6 +11,8 @@ import { CalculatorsLineChart } from 'src/sections/calculators/calculators-line-
 import { grey, red } from '@mui/material/colors';
 import { CalculatorsBarChart } from 'src/sections/calculators/calculators-bar-chart';
 import { CalculatorsTile } from 'src/sections/calculators/calculators-tile';
+import { fontSize } from '@mui/system';
+import { CalculatorsWindProperty } from 'src/sections/calculators/calculators-wind-property';
 
 const Page = () => {
     const router = useRouter();
@@ -76,6 +78,17 @@ const Page = () => {
                             <CalculatorsTile value='1.668.234,00' title= 'Installation Cost' />
                             <CalculatorsTile value='+9%' title= 'Consumption Saving Ratio' />
                         </Stack>
+                        <Stack spacing={2} direction='row' my={1}>
+                            <Card sx={{flex: 1, px: 3, pt: 2}}>
+                                <Typography variant='h6'> Pareto Optimal Turnines</Typography>
+                                <Box sx={{my: 1}}>
+                                    <Typography variant='span' sx={{fontSize: 'smaller'}}> ACSA A27/225</Typography>
+                                    <Divider></Divider>
+                                    <Typography variant='span' sx={{fontSize: 'smaller'}}> ACSA A22/225</Typography>
+                                </Box>
+                                
+                            </Card>
+                        </Stack>
                     </Grid>
                     <Grid xs={12} sm={6} lg={5.5} mx={3}>
                         <CalculatorsBarChart
@@ -101,6 +114,29 @@ const Page = () => {
                         </Stack>
                     </Grid>
                 </Grid>
+                <Stack spacing={3}>
+                    <Card sx={{flex: 1, px: 3, py: 2}}>
+                        <Typography variant='span'>
+                            Preferable solution(based on weighted sum optimization)
+                        </Typography>
+                        <Typography variant='h4'>
+                            ACSA A27/225
+                        </Typography>
+                    </Card>
+                    <Card sx={{flex: 1, px: 3, py: 1}}>
+                        <Box sx={{pt: 2}}>
+                            <Typography variant='h6'>
+                                Preferable Turbine Properties
+                            </Typography>
+                        </Box>
+                        <Grid container spacing={3} mt={2} pt={1}>
+                            <CalculatorsWindProperty title='Modal' value='ACSA A27/225' />
+                            <CalculatorsWindProperty title='Manufacture 1' value='' />
+                            <CalculatorsWindProperty title='Cut in wind speed' value='3.5' />
+                            <CalculatorsWindProperty title='Type 2' value='Asynchronus' />
+                        </Grid>
+                    </Card>
+                </Stack>
             </Container>
         </Box>
         </>
