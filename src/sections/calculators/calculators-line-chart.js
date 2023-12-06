@@ -25,6 +25,12 @@ const useChartOptions = () => {
         show: false
       }
     },
+    title:{
+      text: 'Energy',
+      style:{
+        // color: '#247BA0'
+      }
+    },
     colors: [theme.palette.success.main, alpha(theme.palette.primary.main, 0.3)],
     dataLabels: {
       enabled: false
@@ -48,7 +54,9 @@ const useChartOptions = () => {
       }
     },
     legend: {
-      show: false
+      show: true,
+      position: 'top',
+      horizontalAlign: 'right'
     },
     plotOptions: {
       line: {
@@ -97,7 +105,6 @@ const useChartOptions = () => {
         formatter: (value) => {
           return (value / 5 * 7000).toLocaleString() + 'kwh'
         },
-
         offsetX: -10,
         style: {
           colors: theme.palette.text.secondary
@@ -108,14 +115,14 @@ const useChartOptions = () => {
 };
 
 export const CalculatorsLineChart = (props) => {
-  const { chartSeries, sx } = props;
+  const { chartSeries} = props;
   const chartOptions = useChartOptions();
 
   return (
-    <Card sx={sx} borderColor={red}>
+    <Card borderColor={red}>
       <CardContent>
         <Chart
-          height={200}
+          height={250}
           options={chartOptions}
           series={chartSeries}
           type="line"

@@ -21,7 +21,7 @@ const Page = () => {
       setOrientation(event.target.value );
     };
     const handleSave = () => {
-        router.push('/')
+        router.push('/calculators/wind-results')
     };
 
     return (

@@ -32,7 +32,7 @@ const Page = () => {
         <>
         <Head>
             <title>
-                Solar Analysis Results
+                Wind Analysis Results
             </title>
         </Head>
         <Box
@@ -45,7 +45,7 @@ const Page = () => {
             <Container maxWidth="xl" sx={{mt: 1}}>
                 <Stack spacing={1}>
                     <Typography variant="h4">
-                        Solar Analysis Results
+                        Wind Analysis Results
                     </Typography>
                 </Stack>
                 <Button size="medium" variant="contained"
@@ -76,14 +76,6 @@ const Page = () => {
                             <CalculatorsTile value='1.668.234,00' title= 'Installation Cost' />
                             <CalculatorsTile value='+9%' title= 'Consumption Saving Ratio' />
                         </Stack>
-                        <Stack spacing={2} direction='row' my={1}>
-                            <CalculatorsTile value='229.223,00' title= '95 months' />
-                            <CalculatorsTile value='144' title= 'Number of solar Panels' />
-                        </Stack>
-                        <Stack spacing={2} direction='row' my={1}>
-                            <CalculatorsTile value='0' title= 'Trees saved' />
-                            <CalculatorsTile value='0' title= 'Trees saved' />
-                        </Stack>
                     </Grid>
                     <Grid xs={12} sm={6} lg={5.5} mx={3}>
                         <CalculatorsBarChart
@@ -106,10 +98,6 @@ const Page = () => {
                         <Stack spacing={2} direction='row' my={1}>
                             <CalculatorsTile value='+91%' title= 'Installation Cost' />
                             <CalculatorsTile value='12.111,00' title= 'Consumption Saving Ratio' />
-                        </Stack>
-                        <Stack spacing={2} direction='row' my={1}>
-                            <CalculatorsTile value='144' title= 'CO₂ Offsetting (Tonnes)' />
-                            <CalculatorsTile value='241.345,00' title= 'Earning per Year' />
                         </Stack>
                     </Grid>
                 </Grid>
