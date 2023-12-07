@@ -5,7 +5,8 @@ import { Container, Grid, Box, Button, Link, Checkbox, InputLabel,LinearProgress
     Stack, TextField, Typography,  FormControlLabel, MenuItem, FormControl, Select, SelectChangeEvent
 } from '@mui/material';
 import { Layout as DashboardLayout } from 'src/layouts/dashboard/layout';
-
+import { GisOfferReport } from 'src/sections/gis/gis-offer-report';
+import { GisOfferOffer } from 'src/sections/gis/gis-offer-offer';
 
 
 const Page = () => {
@@ -32,10 +33,15 @@ const Page = () => {
                         Send Offer
                     </Typography>
                 </Stack>
-         
-                <Grid container spacing={3} sx={{my: 4, ml: .1}}>
-
+                <Grid sx={{my: 8}} container>
+                    <Grid xs={12} md={6} lg={4} mr={4}>
+                        <GisOfferReport  />
+                    </Grid>
+                    <Grid xs={12} md={6} lg={7.5} >
+                        <GisOfferOffer />
+                    </Grid>
                 </Grid>
+
             </Container>
         </Box>
         </>

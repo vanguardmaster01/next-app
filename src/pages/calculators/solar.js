@@ -86,7 +86,7 @@ const Page = () => {
                                         fullWidth
                                         label="Network Traiff"
                                         name="trill"
-                                        onChange={handleOrientation}
+                                        onChange={handleTriff}
                                         required
                                         select
                                         SelectProps={{ native: true }}
