@@ -1,11 +1,5 @@
-import ChartBarIcon from '@heroicons/react/24/solid/ChartBarIcon';
-import CogIcon from '@heroicons/react/24/solid/CogIcon';
 import LockClosedIcon from '@heroicons/react/24/solid/LockClosedIcon';
-import ShoppingBagIcon from '@heroicons/react/24/solid/ShoppingBagIcon';
-import UserIcon from '@heroicons/react/24/solid/UserIcon';
 import UserPlusIcon from '@heroicons/react/24/solid/UserPlusIcon';
-import UsersIcon from '@heroicons/react/24/solid/UsersIcon';
-import XCircleIcon from '@heroicons/react/24/solid/XCircleIcon';
 import { SvgIcon } from '@mui/material';
 
 import CalculateOutlinedIcon from '@mui/icons-material/CalculateOutlined';
@@ -36,7 +30,7 @@ export const items = [
   },
   {
     title: 'Dashboard',
-    path: '/companies',
+    path: '/',
     icon: (
       <SvgIcon fontSize="small">
         <HomeOutlinedIcon />
@@ -54,7 +48,7 @@ export const items = [
   },
   {
     title: 'Operations',
-    path: '/settings',
+    path: '/operations',
     icon: (
       <SvgIcon fontSize="small">
         <HandymanOutlinedIcon />
@@ -81,7 +75,7 @@ export const items = [
   },
   {
     title: 'Settings',
-    path: '/404',
+    path: '/settings',
     icon: (
       <SvgIcon fontSize="small">
         <SettingsOutlinedIcon />

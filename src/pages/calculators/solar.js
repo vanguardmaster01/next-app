@@ -9,6 +9,17 @@ import { Layout as DashboardLayout } from 'src/layouts/dashboard/layout';
 import { solar_image_path, wind_image_path } from 'src/utils/utils';
 import Map from 'src/components/map';
 
+const orientations= [
+    { value: 'Orientation 1'},
+    { value: 'Orientation 2'},
+    { value: 'Orientation 3'}
+];
+const triffs= [
+    { value: 'Triff 1'},
+    { value: 'Triff 2'},
+    { value: 'Triff 3'}
+];
+
 const Page = () => {
     const router = useRouter();
     const [triff, setTriff] = useState('');
@@ -80,22 +91,27 @@ const Page = () => {
                                 <form
                                 noValidate
                                 >
-                                <Stack spacing={3}>
-                                    <FormControl fullWidth variant='standard'>
-                                        <InputLabel id="Trill-label">
-                                            Network Traiff
-                                        </InputLabel>
-                                        <Select
-                                            id="triff_id"
-                                            value={triff}
-                                            label="Network Traiff"
-                                            onChange={handleTriff}
+                                <Stack spacing={3}>                                    
+                                    <TextField
+                                        fullWidth
+                                        label="Network Traiff"
+                                        name="trill"
+                                        onChange={handleOrientation}
+                                        required
+                                        select
+                                        SelectProps={{ native: true }}
+                                        value={triff.value}
                                         >
-                                            <MenuItem value={10}>Triff 1</MenuItem>
-                                            <MenuItem value={20}>Triff 2</MenuItem>
-                                            <MenuItem value={30}>Triff 3</MenuItem>
-                                        </Select>
-                                    </FormControl>
+                                        {triffs.map((option) => (
+                                            <option
+                                            key={option.value}
+                                            value={option.value}
+                                            >
+                                            {option.value}
+                                            </option>
+                                        ))}
+                                    </TextField>
+
                                     <TextField
                                     fullWidth
                                     label="Number of People"
@@ -115,22 +131,25 @@ const Page = () => {
                                     label="Roof Area (m²)"
                                     name="area"
                                     />
-                                    
-                                    <FormControl fullWidth variant='standard'>
-                                        <InputLabel id="orientation-label">
-                                            Orientation
-                                        </InputLabel>
-                                        <Select
-                                            id="orientation_id"
-                                            value={orientation}
-                                            label="Orientation"
-                                            onChange={handleOrientation}
+                                    <TextField
+                                        fullWidth
+                                        label="Orientation"
+                                        name="orientation"
+                                        onChange={handleOrientation}
+                                        required
+                                        select
+                                        SelectProps={{ native: true }}
+                                        value={orientation.value}
                                         >
-                                            <MenuItem value={10}>Orientation 1</MenuItem>
-                                            <MenuItem value={20}>Orientation 2</MenuItem>
-                                            <MenuItem value={30}>Orientation 3</MenuItem>
-                                        </Select>
-                                    </FormControl>
+                                        {orientations.map((option) => (
+                                            <option
+                                            key={option.value}
+                                            value={option.value}
+                                            >
+                                            {option.value}
+                                            </option>
+                                        ))}
+                                    </TextField>
                                     <Stack direction='row'>
                                         <Typography
                                             sx={{flex: 1}}

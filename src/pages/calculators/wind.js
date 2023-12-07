@@ -8,6 +8,12 @@ import { Layout as DashboardLayout } from 'src/layouts/dashboard/layout';
 
 import { wind_image_path } from 'src/utils/utils';
 
+const triffs= [
+    { value: 'Triff 1'},
+    { value: 'Triff 2'},
+    { value: 'Triff 3'}
+];
+
 const Page = () => {
     const router = useRouter();
     const [triff, setTriff] = useState('');
@@ -78,21 +84,25 @@ const Page = () => {
                                 noValidate
                                 >
                                 <Stack spacing={3}>
-                                    <FormControl fullWidth variant='standard'>
-                                        <InputLabel id="Trill-label">
-                                            Network Traiff
-                                        </InputLabel>
-                                        <Select
-                                            id="triff_id"
-                                            value={triff}
-                                            label="Network Traiff"
-                                            onChange={handleTriff}
+                                    <TextField
+                                        fullWidth
+                                        label="Network Traiff"
+                                        name="trill"
+                                        onChange={handleOrientation}
+                                        required
+                                        select
+                                        SelectProps={{ native: true }}
+                                        value={triff.value}
                                         >
-                                            <MenuItem value={10}>Triff 1</MenuItem>
-                                            <MenuItem value={20}>Triff 2</MenuItem>
-                                            <MenuItem value={30}>Triff 3</MenuItem>
-                                        </Select>
-                                    </FormControl>
+                                        {triffs.map((option) => (
+                                            <option
+                                            key={option.value}
+                                            value={option.value}
+                                            >
+                                            {option.value}
+                                            </option>
+                                        ))}
+                                    </TextField>
                                     <TextField
                                     fullWidth
                                     label="Number of People"
