@@ -1,14 +1,12 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Head from 'next/head';
-import { Container, Grid, Box, Button, Link, Checkbox, InputLabel,LinearProgress,
-    Stack, TextField, Typography,  FormControlLabel, MenuItem, FormControl, Select, SelectChangeEvent
+import { Container, Grid, Box, Button,
+    Stack, TextField, Typography
 } from '@mui/material';
 import { Layout as DashboardLayout } from 'src/layouts/dashboard/layout';
 
-import { solar_image_path, wind_image_path } from 'src/utils/utils';
 import { CalculatorsLineChart } from 'src/sections/calculators/calculators-line-chart';
-import { grey, red } from '@mui/material/colors';
 import { CalculatorsBarChart } from 'src/sections/calculators/calculators-bar-chart';
 import { CalculatorsTile } from 'src/sections/calculators/calculators-tile';
 
