@@ -16,13 +16,16 @@ import WindPowerOutlinedIcon from '@mui/icons-material/WindPowerOutlined';
 import NotificationAddOutlinedIcon from '@mui/icons-material/NotificationAddOutlined';
 import AddBusinessOutlinedIcon from '@mui/icons-material/AddBusinessOutlined';
 import { OverviewCard } from 'src/sections/overview/overview-card';
+import { DashboardTile } from 'src/sections/dashboard/dashboard-tile';
+import { CalculatorsBarChart } from 'src/sections/calculators/calculators-bar-chart';
+import { DashboardOffers } from 'src/sections/dashboard/dashboard-offers';
 
 const Page = () => {
   return (
     <>
       <Head>
         <title>
-          Overview  
+          Dashboard  
         </title>
       </Head>
       <Box
@@ -35,112 +38,102 @@ const Page = () => {
           <Container maxWidth="xl" sx={{mt: 1}}>
             <Stack spacing={1}>
               <Typography variant="h4">
-                Overview
+                Dashboard
               </Typography>
             </Stack>
             <Grid container spacing={3} sx={{my: 4, ml: .1}}>
-              <Grid xs={12} sm={6} lg={7.5} sx={{mr: 1}}>
-                <Card sx={{width: '100%', px: 2, py: 2}}>
-                    <Box>
-                        <Stack spacing={2} direction='row' px={1} sx={{display: 'flex', alignItems: 'center'}}>
-                          <Typography variant='h4'>234.232,00</Typography>
-                          <Box>
-                            <Typography variant='span' sx={{fontSize: 'smaller'}}>Earning per Year</Typography>
-                          </Box>
-                        </Stack>
-                        <Box sx={{my: 1}}>
-                          <Button
-                            color="inherit"
-                            endIcon={(
-                              <SvgIcon fontSize="small">
-                                <ArrowRightIcon />
-                              </SvgIcon>
-                            )}
-                            size="small"
-                          >
-                            See the detailed reports
-                          </Button>
-                        </Box>
-                      </Box>
-                </Card>                
-                <Stack direction='row' spacing={2} my={2}>
-                  <OverviewCard
-                    soon = {true}
-                    notificationIcon = {(<SvgIcon><NotificationsOutlinedIcon /></SvgIcon>)}
-                    title = "Bank" 
-                    icon = {(<SvgIcon><AccountBalanceOutlinedIcon /></SvgIcon>)}
-                    btnTxt = "Apply for credit"
-                    arrowIcon = {(<SvgIcon fontSize="small"><ArrowRightIcon /></SvgIcon>)}
-                  />
-                  <OverviewCard
-                    soon = {true}
-                    notificationIcon = {(<SvgIcon><NotificationsOutlinedIcon /></SvgIcon>)}
-                    title = "Insurance" 
-                    icon = {(<SvgIcon><SecurityOutlinedIcon /></SvgIcon>)}
-                    btnTxt = "See insurance options"
-                    arrowIcon = {(<SvgIcon fontSize="small"><ArrowRightIcon /></SvgIcon>)}
-                  />
-                </Stack>
-                <Stack direction='row' spacing={2} my={2}>
-                  <OverviewCard
-                    soon = {false}
-                    notificationIcon = {(<SvgIcon><NotificationsOutlinedIcon /></SvgIcon>)}
-                    title = "Solar Calculator" 
-                    icon = {(<SvgIcon><SolarPowerOutlinedIcon /></SvgIcon>)}
-                    btnTxt = "Solay panel analysis"
-                    arrowIcon = {(<SvgIcon fontSize="small"><ArrowRightIcon /></SvgIcon>)}
-                  />
-                  <OverviewCard
-                    soon = {false}
-                    notificationIcon = {(<SvgIcon><NotificationsOutlinedIcon /></SvgIcon>)}
-                    title = "Wind Calculator" 
-                    icon = {(<SvgIcon><WindPowerOutlinedIcon /></SvgIcon>)}
-                    btnTxt = "Wind turbine analysis"
-                    arrowIcon = {(<SvgIcon fontSize="small"><ArrowRightIcon /></SvgIcon>)}
-                  />
-                </Stack>
+              <Grid xs={12} sm={6} lg={3}>
+                <DashboardTile 
+                  title = 'Potential Income'
+                  soon = {true}
+                  value = '55.271,90'
+                  btnTxt = 'See all reports'
+                  notificationIcon = {(<SvgIcon><NotificationsOutlinedIcon /></SvgIcon>)}
+                  arrowIcon = {(<SvgIcon fontSize="small"><ArrowRightIcon /></SvgIcon>)}
+                />
               </Grid>
-              <Grid xs={12} sm={6} lg={4} mx={1}>
-                <Card sx={{width: '100%', px: 2, py: 2}}>
-                   <Box>
-                        <Stack spacing={2} direction='row' py={1} px={1} sx={{display: 'flex', alignItems: 'center'}}>
-                          <Typography variant='h6'>Best Offers for you</Typography>
-                        </Stack>
-                        <Box sx={{mt: 2}}>
-                          <Button
-                            color="inherit"
-                            endIcon={(
-                              <SvgIcon fontSize="small">
-                                <ArrowRightIcon />
-                              </SvgIcon>
-                            )}
-                            size="small"
-                          >
-                            See the detailed reports
-                          </Button>
-                        </Box>
-                      </Box>
-                </Card> 
-                <Stack direction='row' spacing={2} my={2}>
-                  <OverviewCard
-                      soon = {true}
-                      notificationIcon = {(<SvgIcon><NotificationsOutlinedIcon /></SvgIcon>)}
-                      title = "Additional Services" 
-                      icon = {(<SvgIcon><AddBusinessOutlinedIcon /></SvgIcon>)}
-                      btnTxt = "Explore our special services"
-                      arrowIcon = {(<SvgIcon fontSize="small"><ArrowRightIcon /></SvgIcon>)}
-                    />
-                </Stack>
-                <Stack direction='row' spacing={2} my={2}>
-                  <OverviewCard
-                    soon = {true}
-                    notificationIcon = {(<SvgIcon><NotificationsOutlinedIcon /></SvgIcon>)}
-                    title = "New Features" 
-                    icon = {(<SvgIcon><NotificationAddOutlinedIcon /></SvgIcon>)}
-                    btnTxt = "Get notifications"
-                    arrowIcon = {(<SvgIcon fontSize="small"><ArrowRightIcon /></SvgIcon>)}
-                  />
-                </Stack>
+              <Grid xs={12} sm={6} lg={3}>
+                <DashboardTile 
+                  title = 'Current Income'
+                  soon = {false}
+                  value = '21,234,123,00'
+                  btnTxt = 'See all reports'
+                  notificationIcon = {(<SvgIcon><NotificationsOutlinedIcon /></SvgIcon>)}
+                  arrowIcon = {(<SvgIcon fontSize="small"><ArrowRightIcon /></SvgIcon>)}
+                />
+              </Grid>
+              <Grid xs={12} sm={6} lg={3}>
+                <DashboardTile 
+                  title = 'Advanced Engineering'
+                  soon = {false}
+                  value = 'APPS'
+                  btnTxt = 'Geopraphic Information System'
+                  notificationIcon = {(<SvgIcon><NotificationsOutlinedIcon /></SvgIcon>)}
+                  arrowIcon = {(<SvgIcon fontSize="small"><ArrowRightIcon /></SvgIcon>)}
+                />
+              </Grid>
+              <Grid xs={12} sm={6} lg={3}>
+                <DashboardTile 
+                  title = 'Buy-Sell'
+                  soon = {true}
+                  value = 'MARKET'
+                  btnTxt = 'Manage your purchases'
+                  notificationIcon = {(<SvgIcon><NotificationsOutlinedIcon /></SvgIcon>)}
+                  arrowIcon = {(<SvgIcon fontSize="small"><ArrowRightIcon /></SvgIcon>)}
+                />
+              </Grid>
+            </Grid>
+            <Grid container spacing={3} sx={{my: 4, ml: .1}}>
+              <Grid xs={12} sm={6} lg={7} mr={3}>
+                <CalculatorsBarChart
+                            chartSeries={[
+                                {
+                                name: 'This year',
+                                data: [18, 16, 5, 8, 3, 14, 14, 16, 17, 19, 18, 20]
+                                },
+                                {
+                                name: 'Last year',
+                                data: [12, 11, 4, 6, 2, 9, 9, 10, 11, 12, 13, 13]
+                                }
+                            ]}
+                        />
+              </Grid>
+              <Grid xs={12} sm={6} lg={4.5}>
+                <DashboardOffers
+                  products={[
+                    {
+                      id: '5ece2c077e39da27658aa8a9',
+                      image: '/assets/products/product-1.png',
+                      name: 'Healthcare Erbology',
+                      email: "gekoni6459@gearstag.com"
+                    },
+                    {
+                      id: '5ece2c0d16f70bff2cf86cd8',
+                      image: '/assets/products/product-2.png',
+                      name: 'Makeup Lancome Rouge',
+                      email: "gekoni6459@gearstag.com"
+                    },
+                    {
+                      id: 'b393ce1b09c1254c3a92c827',
+                      image: '/assets/products/product-5.png',
+                      name: 'Skincare Soja CO',
+                      email: "gekoni6459@gearstag.com"
+                    },
+                    {
+                      id: 'a6ede15670da63f49f752c89',
+                      image: '/assets/products/product-6.png',
+                      name: 'Makeup Lipstick',
+                      email: "gekoni6459@gearstag.com"
+                    },
+                    {
+                      id: 'bcad5524fe3a2f8f8620ceda',
+                      image: '/assets/products/product-7.png',
+                      name: 'Healthcare Ritual',
+                      email: "gekoni6459@gearstag.com"
+                    }
+                  ]}
+                  sx={{ height: '100%' }}
+                />
               </Grid>
             </Grid>
           </Container>

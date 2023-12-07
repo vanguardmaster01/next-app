@@ -12,7 +12,7 @@ import GridViewOutlinedIcon from '@mui/icons-material/GridViewOutlined';
 export const items = [
   {
     title: 'Overview',
-    path: '/',
+    path: '/overview',
     icon: (
       <SvgIcon fontSize="small">
         <GridViewOutlinedIcon />
