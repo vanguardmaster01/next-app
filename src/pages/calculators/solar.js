@@ -60,7 +60,7 @@ const Page = () => {
          
                 <Grid container spacing={3} sx={{my: 4, ml: .1}}>
                     <Grid xs={12} sm={6} lg={7} >
-                        <Box
+                        {/* <Box
                             component="img"
                             src={solar_image_path}
                             sx={{
@@ -68,8 +68,8 @@ const Page = () => {
                                 height: 300,
                                 width: 300
                             }}
-                            />
-                            {/* <Map address="1600 Amphitheatre Parkway, Mountain View, CA" /> */}
+                            /> */}
+                            <Map address="1600 Amphitheatre Parkway, Mountain View, CA" />
                     </Grid>
                     <Grid xs={12} sm={6} lg={5}>
                         <Box

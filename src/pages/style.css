@@ -1,0 +1,9 @@
+.leaflet-control-geosearch.leaflet-geosearch-bar{
+    display: flex;
+    justify-content: center;
+}
+
+.leaflet-control-geosearch.leaflet-geosearch-bar form{
+    z-index: 1000;
+}
+
