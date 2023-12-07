@@ -25,7 +25,7 @@ const Page = () => {
   const [method, setMethod] = useState('email');
   const formik = useFormik({
     initialValues: {
-      email: 'demo@devias.io',
+      email: 'gekoni6459@gearstag.com',
       password: 'Password123!',
       submit: null
     },
@@ -71,7 +71,7 @@ const Page = () => {
     <>
       <Head>
         <title>
-          Login | Devias Kit
+          Login
         </title>
       </Head>
       <Box
@@ -94,41 +94,18 @@ const Page = () => {
           <div>
             <Stack
               spacing={1}
-              sx={{ mb: 3 }}
+              sx={{ mb: 3, alignItems: 'center' }}
             >
               <Typography variant="h4">
-                Login
+                Sign in
               </Typography>
               <Typography
                 color="text.secondary"
                 variant="body2"
               >
-                Don&apos;t have an account?
-                &nbsp;
-                <Link
-                  component={NextLink}
-                  href="/auth/register"
-                  underline="hover"
-                  variant="subtitle2"
-                >
-                  Register
-                </Link>
+                Enter your email and password below
               </Typography>
             </Stack>
-            <Tabs
-              onChange={handleMethodChange}
-              sx={{ mb: 3 }}
-              value={method}
-            >
-              <Tab
-                label="Email"
-                value="email"
-              />
-              <Tab
-                label="Phone Number"
-                value="phoneNumber"
-              />
-            </Tabs>
             {method === 'email' && (
               <form
                 noValidate
@@ -158,9 +135,6 @@ const Page = () => {
                     value={formik.values.password}
                   />
                 </Stack>
-                <FormHelperText sx={{ mt: 1 }}>
-                  Optionally you can skip.
-                </FormHelperText>
                 {formik.errors.submit && (
                   <Typography
                     color="error"
@@ -177,7 +151,7 @@ const Page = () => {
                   type="submit"
                   variant="contained"
                 >
-                  Continue
+                  Sing in with Email
                 </Button>
                 <Button
                   fullWidth
@@ -187,15 +161,11 @@ const Page = () => {
                 >
                   Skip authentication
                 </Button>
-                <Alert
-                  color="primary"
-                  severity="info"
-                  sx={{ mt: 3 }}
-                >
-                  <div>
-                    You can use <b>demo@devias.io</b> and password <b>Password123!</b>
-                  </div>
-                </Alert>
+                <Box sx={{display: 'flex', alignItems: 'center'}} flexDirection="column">
+                  <Typography variant='span' >By clicking continue, you agree</Typography>
+                  <Typography variant='span'>to our <Link> Terms of Service</Link> and </Typography>
+                  <Typography variant='span'><Link>Privacy Policy</Link></Typography>
+                </Box>
               </form>
             )}
             {method === 'phoneNumber' && (
