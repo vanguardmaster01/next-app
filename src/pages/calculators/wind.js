@@ -6,7 +6,7 @@ import { Container, Grid, Box, Button, Link, Checkbox, InputLabel,
 } from '@mui/material';
 import { Layout as DashboardLayout } from 'src/layouts/dashboard/layout';
 
-import { wind_image_path } from 'src/utils/utils';
+import Map from 'src/components/map';
 
 const triffs= [
     { value: 'Triff 1'},
@@ -52,16 +52,7 @@ const Page = () => {
                 </Stack>
                 <Grid container spacing={3} sx={{my: 4, ml: .1}}>
                     <Grid xs={12} sm={6} lg={7} >
-                        <Box
-                            component="img"
-                            src={wind_image_path}
-                            sx={{
-                                borderRadius: 1,
-                                height: 300,
-                                width: 300
-                            }}
-                            />
-                            {/* <Map address="1600 Amphitheatre Parkway, Mountain View, CA" /> */}
+                        <Map address="1600 Amphitheatre Parkway, Mountain View, CA" />
                     </Grid>
                     <Grid xs={12} sm={6} lg={5}>
                         <Box

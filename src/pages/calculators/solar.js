@@ -6,7 +6,6 @@ import { Container, Grid, Box, Button, Link, Checkbox, InputLabel,LinearProgress
 } from '@mui/material';
 import { Layout as DashboardLayout } from 'src/layouts/dashboard/layout';
 
-import { solar_image_path, wind_image_path } from 'src/utils/utils';
 import Map from 'src/components/map';
 
 const orientations= [
@@ -60,16 +59,7 @@ const Page = () => {
          
                 <Grid container spacing={3} sx={{my: 4, ml: .1}}>
                     <Grid xs={12} sm={6} lg={7} >
-                        {/* <Box
-                            component="img"
-                            src={solar_image_path}
-                            sx={{
-                                borderRadius: 1,
-                                height: 300,
-                                width: 300
-                            }}
-                            /> */}
-                            <Map address="1600 Amphitheatre Parkway, Mountain View, CA" />
+                        <Map address="1600 Amphitheatre Parkway, Mountain View, CA" />
                     </Grid>
                     <Grid xs={12} sm={6} lg={5}>
                         <Box
