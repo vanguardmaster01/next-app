@@ -8,13 +8,20 @@ import UsersIcon from '@heroicons/react/24/solid/UsersIcon';
 import XCircleIcon from '@heroicons/react/24/solid/XCircleIcon';
 import { SvgIcon } from '@mui/material';
 
+import CalculateOutlinedIcon from '@mui/icons-material/CalculateOutlined';
+import EqualizerOutlinedIcon from '@mui/icons-material/EqualizerOutlined';
+import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
+import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
+import HandymanOutlinedIcon from '@mui/icons-material/HandymanOutlined';
+import GridViewOutlinedIcon from '@mui/icons-material/GridViewOutlined';
+
 export const items = [
   {
     title: 'Overview',
     path: '/',
     icon: (
       <SvgIcon fontSize="small">
-        <ChartBarIcon />
+        <GridViewOutlinedIcon />
       </SvgIcon>
     )
   },
@@ -23,7 +30,7 @@ export const items = [
     path: '/calculators',
     icon: (
       <SvgIcon fontSize="small">
-        <UsersIcon />
+        <CalculateOutlinedIcon />
       </SvgIcon>
     )
   },
@@ -32,7 +39,7 @@ export const items = [
     path: '/companies',
     icon: (
       <SvgIcon fontSize="small">
-        <ShoppingBagIcon />
+        <HomeOutlinedIcon />
       </SvgIcon>
     )
   },
@@ -41,7 +48,7 @@ export const items = [
     path: '/reports',
     icon: (
       <SvgIcon fontSize="small">
-        <UserIcon />
+        <EqualizerOutlinedIcon />
       </SvgIcon>
     )
   },
@@ -50,7 +57,7 @@ export const items = [
     path: '/settings',
     icon: (
       <SvgIcon fontSize="small">
-        <CogIcon />
+        <HandymanOutlinedIcon />
       </SvgIcon>
     )
   },
@@ -77,7 +84,7 @@ export const items = [
     path: '/404',
     icon: (
       <SvgIcon fontSize="small">
-        <XCircleIcon />
+        <SettingsOutlinedIcon />
       </SvgIcon>
     )
   }
