@@ -59,7 +59,7 @@ const Page = () => {
             <Container maxWidth="xl" sx={{mt: 1}}>
                <Stack spacing={1}>
                     <Typography variant="h4">
-                        Solay Application
+                        Solar Application
                     </Typography>
                 </Stack>
                 <Stack spacing={2} sx={{my: 3, px: 2}}>

@@ -1,31 +1,55 @@
-import { useEffect, useRef, useMemo } from "react";
-import { Loader } from "@googlemaps/js-api-loader";
+import { useEffect } from 'react';
+import { MapContainer, Marker, Popup, TileLayer, useMap } from 'react-leaflet'
+import 'leaflet/dist/leaflet.css'
+import { OpenStreetMapProvider, GeoSearchControl } from 'leaflet-geosearch';
+import L from "leaflet"
 
-function Map({ address }) {
-  const mapRef = useRef(null);
-    const geocoder = useMemo(() => window.google.maps.Geocoder(), []);
+const Search = (props) => {
+    const map = useMap(); //here use useMap hook
     useEffect(() => {
-        const loader = new Loader({
-        apiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY,
-        version: "weekly",
-        });
-    loader.load().then(() => {
-        geocoder.geocode({ address: address }, (results, status) => {
-            if (status === "OK") {
-            const map = new google.maps.Map(mapRef.current, {
-                center: results[0].geometry.location,
-                zoom: 8,
-            });
-    const marker = new google.maps.Marker({
-                map: map,
-                position: results[0].geometry.location,
-            });
-            } else {
-            console.error(`Geocode was not successful for the following reason: ${status}`);
-            }
-        });
-        });
-    }, [address, geocoder]);
-    return <div style={{ height: "400px" }} ref={mapRef} />;
+      const searchControl = new GeoSearchControl({
+        provider: props.provider,
+        style: "bar",
+        marker: {
+          icon: new L.icon({
+            iconUrl:
+              "https://unpkg.com/leaflet@1.5.1/dist/images/marker-icon.png",
+            iconSize: [25, 41],
+            iconAnchor: [10, 41],
+            popupAnchor: [2, -40]
+          })
+        },
+        ...props
+      });
+
+      map.addControl(searchControl);
+
+      return () => map.removeControl(searchControl)
+    }, [map, props]);
+    return null;
 }
-export default Map;
+
+const Map = () => {
+    const prov = new OpenStreetMapProvider();
+    return (
+        <MapContainer center={[51.505, -0.09]} zoom={13} scrollWheelZoom={false} style={{height: 400, width: "100%"}}>
+        <TileLayer
+            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        />
+        <Search
+        provider={prov}
+        showMarker={true}
+        showPopup={false}
+        popupFormat={({ query, result }) => result.label}
+        maxMarkers={3}
+        retainZoomLevel={false}
+        animateZoom={true}
+        autoClose={false}
+        searchLabel={"Enter address, please"}
+        keepResult={false}
+      />
+        </MapContainer>
+    )
+}
+
+export default Map

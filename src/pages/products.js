@@ -14,37 +14,22 @@ const data = [
       id: 0,
       code:'0x123456789ABCDEFGHIJKLMNOPQRST',
       type: 'Solar',
-      consumer: 'Kivanc',
-      status: 'Completed',
       price: '126785',
-      date: '07/11/2025'
     },
     {
       id: 0,
       code:'0x123456789ABCDEFGHIJKLMNOPQRST',
-      type: 'Solar',
-      consumer: 'Kivanc',
-      status: 'Completed',
       price: '126785',
-      date: '07/11/2025'
     },
     {
       id: 0,
       code:'0x123456789ABCDEFGHIJKLMNOPQRST',
-      type: 'Solar',
-      consumer: 'Kivanc',
-      status: 'Completed',
       price: '126785',
-      date: '07/11/2025'
     },
     {
       id: 0,
       code:'0x123456789ABCDEFGHIJKLMNOPQRST',
-      type: 'Solar',
-      consumer: 'Kivanc',
-      status: 'Completed',
       price: '126785',
-      date: '07/11/2025'
     },
   ];
   
@@ -102,7 +87,6 @@ const Page = () => {
             py: 2
             }}
         >
-         
             <Container maxWidth="xl" sx={{mt: 1}}>
                <Stack spacing={1}>
                     <Typography variant="h4">
@@ -128,7 +112,8 @@ const Page = () => {
                 </Box>
 
             </Container>
-        </Box>
+        </Box>       
+
         </>
     );
 };

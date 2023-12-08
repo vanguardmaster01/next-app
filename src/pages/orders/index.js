@@ -8,6 +8,7 @@ import { Layout as DashboardLayout } from 'src/layouts/dashboard/layout';
 import { ProductsTable } from 'src/sections/products/products-table';
 import { applyPagination } from 'src/utils/apply-pagination';
 import { useSelection } from 'src/hooks/use-selection';
+import { OrdersTable } from 'src/sections/orders/orders-table';
 
 const data = [
     {
@@ -112,7 +113,7 @@ const Page = () => {
 
                 <Box sx={{my: 4}}>
 
-                    <ProductsTable
+                    <OrdersTable
                                 count={data.length}
                                 items={orders}
                                 onDeselectAll={ordersSelection.handleDeselectAll}

@@ -8,6 +8,9 @@ import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 import HandymanOutlinedIcon from '@mui/icons-material/HandymanOutlined';
 import GridViewOutlinedIcon from '@mui/icons-material/GridViewOutlined';
+import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
+import DesignServicesOutlinedIcon from '@mui/icons-material/DesignServicesOutlined';
+import ProductionQuantityLimitsOutlinedIcon from '@mui/icons-material/ProductionQuantityLimitsOutlined';
 
 export const items = [
   {
@@ -69,7 +72,16 @@ export const items = [
     path: '/auth/register',
     icon: (
       <SvgIcon fontSize="small">
-        <UserPlusIcon />
+        <LockClosedIcon />
+      </SvgIcon>
+    )
+  },
+  {
+    title: 'Join Vendor List',
+    path: '/auth/vendor',
+    icon: (
+      <SvgIcon fontSize="small">
+        <LockClosedIcon />
       </SvgIcon>
     )
   },
@@ -79,6 +91,42 @@ export const items = [
     icon: (
       <SvgIcon fontSize="small">
         <SettingsOutlinedIcon />
+      </SvgIcon>
+    )
+  },
+  {
+    title: 'GIS',
+    path: '/gis',
+    icon: (
+      <SvgIcon fontSize="small">
+        <SettingsOutlinedIcon />
+      </SvgIcon>
+    )
+  },
+  {
+    title: 'Products',
+    path: '/products',
+    icon: (
+      <SvgIcon fontSize="small">
+        <ProductionQuantityLimitsOutlinedIcon />
+      </SvgIcon>
+    )
+  },
+  {
+    title: 'Services',
+    path: '/services',
+    icon: (
+      <SvgIcon fontSize="small">
+        <DesignServicesOutlinedIcon />
+      </SvgIcon>
+    )
+  },
+  {
+    title: 'Orders',
+    path: '/orders',
+    icon: (
+      <SvgIcon fontSize="small">
+        <ShoppingCartOutlinedIcon />
       </SvgIcon>
     )
   }
